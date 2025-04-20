@@ -13,6 +13,8 @@ export function qrtTokenize(stream) {
     const tokens = [];
     let token = "";
 
+    console.log("Compiling...")
+
     while (!stream.isEOF())
     {
         const c = stream.peek();
@@ -39,7 +41,6 @@ export function qrtTokenize(stream) {
     }
 
     return tokens;
-
 }
 
 window.qrtTokenize = qrtTokenize;

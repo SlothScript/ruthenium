@@ -1,4 +1,4 @@
-/*const types = {
+const types = {
     // Keywords
     'null': 'kw_NULL',          // OPCODE: x00
     'let':  'kw_LET',           // OPCODE: x01
@@ -41,27 +41,25 @@ const NUM_LITERAL = 'NUM_LITERAL'; // OPCODE: x1C
 const STR_LITERAL = 'STR_LITERAL'; // OPCODE: x1D
 const TYPE        = 'TYPE';        // OPCODE: x1E
 const ID          = 'ID';          // OPCODE: x1F
-*/
+
 
 export function Token(s) {
-    // TODO: Delete useless
-    /*let t = ID;
+    let t = ID;
 
-    if (s[0] === '"')
+    if (s[0] === '"') 
+    {
         t = STR_LITERAL;
-    else if (!(isNaN(parseInt(s)) && isNaN(parseFloat(s))))
+    } else if (!(isNaN(parseInt(s)) && isNaN(parseFloat(s)))) {
         t = NUM_LITERAL;
-    else if (s === 'uint' || s === 'int')
+    } else if (s === 'uint' || s === 'int') {
         t = TYPE;
-    else {
+    } else {
         Object.entries(types).forEach(entry => {
-            if (entry[0] !== s)
-                return;
+            if (entry[0] !== s) { return; }
 
             t = entry[1];
         });
     }
 
-    return { symbol: s, type: t };*/
-    return s;
+    return { symbol: s, type: t };
 }
